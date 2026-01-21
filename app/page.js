@@ -1,7 +1,6 @@
-import Navbar from "./components/Navbar";
 import ClientWrapper from "./components/ClientWrapper";
 
-async function fetchPokemon(limit = 50) {
+async function fetchPokemon(limit = 100) {
   const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}`);
   const list = await res.json();
 
@@ -15,7 +14,7 @@ async function fetchPokemon(limit = 50) {
   return detailed;
 }
 
-export default async function Page() {
+export default async function HomePage() {
   const data = await fetchPokemon(50);
 
   return (
